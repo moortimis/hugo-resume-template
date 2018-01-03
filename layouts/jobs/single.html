@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body id="page-top" class="index">
+
+        {{ partial "blog-nav.html" . }}
+
+
+        <div class="portfolio-modal">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h1>{{ .Title }}</h2>
+                                <hr class="star-primary">
+                                <img src="/img/portfolio/{{ .Params.mainImage }}" class="img-responsive img-centered" alt="">
+
+                                {{ .Content }}
+
+                                <ul class="list-inline item-details">
+                                    <li>{{ with $.Site.Params.portfolio.modal.client }}{{.}}{{ end }}:
+                                        <strong>{{ .Params.client }}</strong>
+                                    </li>
+                                    <li>{{ with $.Site.Params.portfolio.modal.date }}{{.}}{{ end }}:
+                                        <strong>{{ .Params.Year }}</strong>
+                                    </li>
+                                    <li>{{ with $.Site.Params.portfolio.modal.category }}{{.}}{{ end }}:
+                                        <strong>{{ .Params.service }}</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+        {{ partial "modals.html" . }}
+        {{ partial "js.html" . }}
+
+    </body>
+</html>

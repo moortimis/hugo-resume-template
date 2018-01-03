@@ -1,0 +1,25 @@
+{{ "<!-- Portfolio Grid Section -->" | safeHTML }}
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2><a href="{{ with .Site.GetPage "section" "jobs" }}{{ .Permalink }}{{ end }}">{{ with .Site.Params.portfolio.title }}{{.}}{{end}}</a></h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            {{ range first 6 ((where .Data.Pages "Section" "jobs").ByParam "year").Reverse }}
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{ .Permalink }}" class="portfolio-link">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-plus-square-o fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/portfolio/{{ .Params.previewImage }}" class="img-responsive" alt="{{ .Params.client }}">
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

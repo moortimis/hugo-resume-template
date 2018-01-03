@@ -1,0 +1,22 @@
+{{ "<!-- Blog Section -->" | safeHTML }}
+<section class="blog" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2><a href="{{ with .Site.GetPage "section" "blog" }}{{ .Permalink }}{{ end }}">{{ with .Site.Params.blog.title }}{{.}}{{ end }}</a></h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                {{ range first 3 (where .Data.Pages "Section" "blog") }}
+                <article class="post-preview text-center">
+                    <h3><a href='{{ .Permalink }}'> {{ .Title }}</a> </h3>
+                    <div class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+                    <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+{{ "<!-- Portfolio Modals -->" | safeHTML }}
+{{ range .Site.Data.projects }}
+<div class="portfolio-modal modal fade" id="portfolioModal{{ .modalID }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>{{ .title }}</h2>
+                        <hr class="star-primary">
+                        <img src="img/portfolio/{{ .modalID }}a.png" class="img-responsive img-centered" alt="">
+                        <p>  
+                            {{ .positionDescription | markdownify }}
+                        </p>
+
+                        {{ if .achievements }}
+                        <h3>ACHIEVEMENTS</h3>
+                        <ul>
+                            {{ range .achievements }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                        
+                        {{ if .responsibilities }}
+                        <h3>RESPONSIBILITIES</h3>
+                        <ul>
+                            {{ range .responsibilities }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+
+                        <ul class="list-inline item-details">
+                            <li>{{ with $.Site.Params.portfolio.modal.client }}{{.}}{{ end }}:
+                                <strong><a href="{{ .companyLink }}">{{ .company }}</a></strong>
+                            </li>
+                            <li>{{ with $.Site.Params.portfolio.modal.date }}{{.}}{{ end }}:
+                                <strong>{{ .date }}</strong>
+                            </li>
+                            <li>{{ with $.Site.Params.portfolio.modal.category }}{{.}}{{ end }}:
+                                <strong>{{ .positionHeld }}</strong>
+                            </li>
+                        </ul>
+                        <p class="text-center"><button type="button" class="center btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

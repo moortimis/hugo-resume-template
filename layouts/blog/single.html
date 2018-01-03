@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    <head>
+        {{ partial "head.html" . }}
+        <link href="/css/blog.css" rel="stylesheet">
+    </head>
+    <body id="page-top" class="index">
+
+        {{ partial "blog-nav.html" . }}
+
+            
+
+        <div id="main" class="blog-post">
+            <div class="container blog-post__container">
+                <article id="content" class="blog-post__content">
+                    <h1 id="title">{{ .Title }}</h1>
+                    <div class="blog-post__date">{{ .Date.Format "Mon Jan 2, 2006" }}</div>
+                    <div class="blog-post__content">{{ .Content }}</div>
+                </article>
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+        {{ partial "js.html" . }}
+
+    </body>
+</html>
