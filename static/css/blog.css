@@ -59,3 +59,30 @@
 		margin-top: 100px;
 	}
 }
+
+.tags-list {
+	margin-top: 30px;
+}
+
+.tags-list__title {
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}
+
+.tags-list__list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tags-list__item {
+	display: inline-block;
+}
+
+.tags-list__item:not(:last-child)::after {
+	content: ',';
+}
+
+.tags-list__link {
+	
+}
