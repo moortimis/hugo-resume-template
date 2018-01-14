@@ -19,12 +19,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-md-8 col-md-offset-2">
                         {{ range .Data.Pages }}
-                        <article class="post-preview text-center">
+                        <article class="blog-list_post-preview text-center">
                             <h3><a href='{{ .Permalink }}'> {{ .Title }}</a> </h3>
                             <div class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-                            <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+                            <div class="blog-list__summary">{{ .Summary }}</div>
+                            {{ if .Truncated }}
+                            <div>
+                                <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+                            </div>
+                            {{ end }}
                         </article>
                         {{ end }}
                     </div>
