@@ -2,9 +2,16 @@
 	margin-top: 30px;
 	padding: 30px 0;
 }
-.blog-post__content {
+.blog-post__content, .blog-list__summary {
 	line-height: 1.58;
 	font-size: 16px;
+}
+.blog-list__summary {
+	font-size: 14px;
+	margin: .7em 0;
+}
+.blog-list_post-preview {
+	margin: 2em 0;
 }
 .blog-post__content p:not(:last-child) {
 	margin: 1.45em 0;
@@ -51,4 +58,31 @@
 	.blog-list {
 		margin-top: 100px;
 	}
+}
+
+.tags-list {
+	margin-top: 30px;
+}
+
+.tags-list__title {
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}
+
+.tags-list__list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tags-list__item {
+	display: inline-block;
+}
+
+.tags-list__item:not(:last-child)::after {
+	content: ',';
+}
+
+.tags-list__link {
+	
 }

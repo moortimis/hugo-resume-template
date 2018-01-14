@@ -22,10 +22,10 @@
                     <a href="/#about">{{ with .Site.Params.about.title }}{{ . }}{{ end }}</a>
                 </li>
                 <li class="">
-                    <a href="/#contact">{{ with .Site.Params.contact.title }}{{ . }}{{ end }}</a>
+                    <a href="{{ with .Site.GetPage "section" "blog" }}{{ .Permalink }}{{ end }}">{{ with .Site.Params.blog.title }}{{ . }}{{ end }}</a>
                 </li>
                 <li class="">
-                    <a href="{{ with .Site.GetPage "section" "blog" }}{{ .Permalink }}{{ end }}">{{ with .Site.Params.blog.title }}{{ . }}{{ end }}</a>
+                    <a href="/#contact">{{ with .Site.Params.contact.title }}{{ . }}{{ end }}</a>
                 </li>
             </ul>
         </div>

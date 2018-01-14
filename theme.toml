@@ -23,3 +23,6 @@ min_version = 0.14
   name = "Jerome Lachaud"
   homepage = "//jeromelachaud.com/"
   repo = "//github.com/jeromelachaud/freelancer-theme"
+
+[taxonomies]
+  tag = "tags"
